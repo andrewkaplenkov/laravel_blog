@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Main\IndexController;
+use App\Http\Controllers\Admin\IndexController  as AdminIndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::prefix('admin')->as('admin.')->group(function () {
+    Route::get('/', AdminIndexController::class)->name('index');
+});
 
 Route::as('main.')->group(function () {
     Route::get('/', IndexController::class)->name('index');
