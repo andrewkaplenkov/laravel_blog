@@ -18,7 +18,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{route('admin.tags.index')}}" class="nav-link">
             <i class="nav-icon fas fa-hashtag"></i>
             <p>
               {{__('Tags')}}
@@ -27,7 +27,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{route('admin.posts.index')}}" class="nav-link">
             <i class="nav-icon fas fa-table"></i>
             <p>
               {{__('Posts')}}

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\TagController as AdminTagController;
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\Admin\IndexController  as AdminIndexController;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +26,11 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->as('admin.')->group(function () {
     Route::get('/', AdminIndexController::class)->name('index');
 
-    Route::resource('/categories', AdminCategoryController::class)->except(['show']);
+    Route::resource('/categories', AdminCategoryController::class)
+        ->except(['show']);
+    Route::resource('/tags', AdminTagController::class)
+        ->except(['show']);
+    Route::resource('/posts', AdminPostController::class);
 });
 
 Route::as('main.')->group(function () {

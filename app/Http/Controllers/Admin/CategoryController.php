@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\Store;
 use App\Http\Requests\Admin\Category\Update;
 use App\Models\Blog\Category;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -28,14 +27,12 @@ class CategoryController extends Controller
         return view('admin.categories.create');
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(Store $request)
     {
         $data = $request->validated();
-        // Category::create($data);
         Category::firstOrCreate($data);
 
         return redirect(route('admin.categories.index'));
@@ -58,6 +55,7 @@ class CategoryController extends Controller
     {
         $data = $request->validated();
         $category->update($data);
+
         return redirect(route('admin.categories.index'));
     }
 

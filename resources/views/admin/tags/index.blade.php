@@ -2,7 +2,7 @@
 
 @section('title')
     @parent
-    :: Categories
+    :: Tags
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
     <div class="container-fluid">
       <div class="row mb-2 ">
         <div class="col-sm-6">
-          <h1 class="m-0">Categories</h1>
+          <h1 class="m-0">Tags</h1>
         </div><!-- /.col -->
         <div class="col-sm-6 pr-5">
-          <a href="{{route('admin.categories.create')}}" class="float-right  btn btn-primary">Add Category</a>
+          <a href="{{route('admin.tags.create')}}" class="float-right  btn btn-primary">Add Tag</a>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -37,17 +37,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $item)
+                    @foreach ($tags as $item)
                     <tr>
                         <td>{{$item->id}}</td>
                         <td><strong>{{$item->title}}</strong></td>
                         <td class="d-flex justify-content-start">
-                            <a href="{{route('admin.categories.edit', [
-                                'category' => $item
+                            <a href="{{route('admin.tags.edit', [
+                                'tag' => $item
                             ])}}" class="btn btn-primary mr-4">Edit</a>
                             <form method="POST"
-                                  action="{{route('admin.categories.destroy', [
-                                'category' => $item
+                                  action="{{route('admin.tags.destroy', [
+                                'tag' => $item
                             ])}}">
                                 @csrf
                                 @method('delete')
