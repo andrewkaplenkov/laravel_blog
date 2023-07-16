@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +31,25 @@
    
     <x-main.footer></x-main.footer>
 
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/vendors/popper.js/popper.min.js')}}"></script>
     <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/vendors/aos/aos.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script>
+    <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+    
+      <script>
         AOS.init({
             duration: 1000
         });
       </script>
+
+{{-- $(function () {
+  bsCustomFileInput.init();
+}); --}}
+  
+
+     
 </body>
 
 </html>

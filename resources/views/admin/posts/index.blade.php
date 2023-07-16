@@ -39,7 +39,7 @@
                 <tr data-widget="expandable-table" aria-expanded="false">
                     <td>{{$item->id}}</td>
                     <td>{{$item->title}}</td>
-                    {{-- <td>{{$item->id}}</td> --}}
+                    <td>{{$item->category->title}}</td>
                     <td class="d-flex justify-content-start">
                         <a href="{{route('admin.posts.edit', [
                             'post' => $item
@@ -60,7 +60,7 @@
                   <tr class="expandable-body d-none">
                     <td colspan="5">
                       <p style="display: none;">
-                        {{$post->content}}
+                        {{$item->content}}
                       </p>
                     </td>
                   </tr>
